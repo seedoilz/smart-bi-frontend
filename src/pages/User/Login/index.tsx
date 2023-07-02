@@ -3,7 +3,7 @@ import { listChartByPageUsingPOST } from '@/services/smart_bi/chartController';
 import { getLoginUserUsingGET, userLoginUsingPOST } from '@/services/smart_bi/userController';
 import { LoginForm, ProFormText } from '@ant-design/pro-components';
 import { useEmotionCss } from '@ant-design/use-emotion-css';
-import { Helmet, history, useModel } from '@umijs/max';
+import { Helmet, history } from '@umijs/max';
 import { message, Tabs } from 'antd';
 import React, { useEffect, useState } from 'react';
 import { flushSync } from 'react-dom';
@@ -12,7 +12,6 @@ import Settings from '../../../../config/defaultSettings';
 
 const Login: React.FC = () => {
   const [type, setType] = useState<string>('account');
-  const { initialState, setInitialState } = useModel('@@initialState');
   const containerClassName = useEmotionCss(() => {
     return {
       display: 'flex',
@@ -33,10 +32,10 @@ const Login: React.FC = () => {
     const userInfo = await getLoginUserUsingGET();
     if (userInfo) {
       flushSync(() => {
-        setInitialState((s) => ({
-          ...s,
-          currentUser: userInfo,
-        }));
+        // setInitialState((s) => ({
+        //   ...s,
+        //   currentUser: userInfo,
+        // }));
       });
     }
   };
