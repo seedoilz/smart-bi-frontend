@@ -10,7 +10,7 @@ Install `node_modules`:
 npm install
 ```
 
-or
+or 
 
 ```bash
 yarn
