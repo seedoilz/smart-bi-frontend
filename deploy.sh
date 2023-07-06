@@ -1,2 +1,2 @@
 npm install
-BUILD_ID=dontKillMe nohup npm start &
+setsid npm start >/dev/null 2>&1 < /dev/null &
