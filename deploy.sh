@@ -1,1 +1,2 @@
-npm run dev
+npm install
+BUILD_ID=dontKillMe nohup npm start &
