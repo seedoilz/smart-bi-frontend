@@ -46,6 +46,7 @@ const Login: React.FC = () => {
       const res = await userLoginUsingPOST({
         ...values,
       });
+      console.error(res)
       if (res.code === 0) {
         const defaultLoginSuccessMessage = '登录成功！';
         message.success(defaultLoginSuccessMessage);
@@ -85,6 +86,7 @@ const Login: React.FC = () => {
           title="Smart BI"
           subTitle={'Smart BI 是 菜籽油的第一个项目'}
           onFinish={async (values) => {
+            console.error(values)
             await handleSubmit(values as API.UserLoginRequest);
           }}
         >
